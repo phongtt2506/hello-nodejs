@@ -9,7 +9,7 @@ pipeline{
     }
     stage('Build'){
       steps{
-        withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
+        withDockerRegistry(credentialsId: 'phongtt-dockerhub', url: 'https://index.docker.io/v1/') {
           sh 'docker build -t phongtt91/nodejs-test:v10 .'
           sh 'docker push -t phongtt91/nodejs-test:v10 .'
         }
