@@ -7,7 +7,7 @@ pipeline{
       //    echo "Hello world"
       }
     }
-    stage('Clone'){
+    stage('Build'){
       steps{
         withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
           sh 'docker build -t phongtt2506/nodejs-test:v10 .'
